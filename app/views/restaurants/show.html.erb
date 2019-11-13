@@ -2,4 +2,9 @@
   <h4><%= @restaurant.category.capitalize %></h4>
   <p><%= @restaurant.address %></p>
   <p><%= @restaurant.phone_number %></p>
+  <% @restaurant.reviews.each do |review| %>
+  <h2><%= review.content %></h2>
+   <h2><%= review.rating %></h2>
+  <% end %>
+  <p><%= link_to "Add a new review", new_restaurant_review_path(@restaurant) %></p>
   <p><%= link_to 'Back to restaurants', restaurants_path %></p>
